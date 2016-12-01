@@ -17,6 +17,7 @@
 - name : String
 --
 + get/set
++ pokeNumber : int
 bg=green</panel_attributes>
     <additional_attributes/>
   </element>
