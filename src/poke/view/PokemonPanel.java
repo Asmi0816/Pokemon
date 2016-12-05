@@ -96,4 +96,33 @@ public class PokemonPanel extends JPanel
 	{
 		
 	}
+	
+	private void changeColorBasedOnData(String data)
+	{
+		if (data.contains("Eletric"))
+		{
+			this.setBackground(Color.YELLOW);
+		}
+		else if (data.contains("Fire"))
+		{
+			this.setBackground(Color.RED);
+		}
+		else if (data.contains("Grass"))
+		{
+			this.setBackground(Color.GREEN);
+		}
+		else if (data.contains("Water"))
+		{
+			this.setBackground(Color.BLUE);
+		}
+		else if (data.contains("Rock"))
+		{
+			this.setBackground(Color.GRAY);
+		}
+		else
+		{
+			this.setBackground(Color.ORANGE);
+		}
+		repaint();
+	}
 }
