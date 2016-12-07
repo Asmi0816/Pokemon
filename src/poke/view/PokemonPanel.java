@@ -106,7 +106,8 @@ public class PokemonPanel extends JPanel
 				healthField.setText(baseController.getPokedex().get(selected).getHealthPoints() + "");
 				advancedArea.setText(baseController.getPokedex().get(selected).getPokemonInformation()
 						+ "\n\n" + baseController.getPokedex.get(selected).getClass().getSimpleName());
-				//Not quite done look at frame work notes to complete.
+				changeColorBasedOnData(baseController.getPokedex().get(selected).getClass().getSimpleName());
+				changeImageDisplay(baseController.getPokedex().get(selected).getClass().getSimpleName());
 			}
 		});
 	}
