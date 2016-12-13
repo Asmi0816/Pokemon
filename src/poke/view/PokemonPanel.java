@@ -145,7 +145,7 @@ public class PokemonPanel extends JPanel
 					
 					public void mouseDragged(MouseEvent dragged)
 					{
-						JOptionPane.showMessageDialog(baseController.getBaseFrame(), "the mouse was at X:" + moved.getX() + ",Y:" + moved.getY());
+						JOptionPane.showMessageDialog(baseController.getBaseFrame(), "the mouse was at X:" + dragged.getX() + ",Y:" + dragged.getY());
 					}
 					public void mouseMoved(MouseEvent moved)
 					{
