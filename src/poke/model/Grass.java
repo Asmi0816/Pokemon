@@ -2,8 +2,8 @@ package poke.model;
 
 public interface Grass
 {
-	public void vineWhip()
-	{
-		
-	}
+	public int vineWhip();
+	
+	public int leechSeed();
+	
 }

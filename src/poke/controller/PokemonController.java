@@ -11,6 +11,7 @@ public class PokemonController
 	private ArrayList<Pokemon> pokedex;
 	private PokemonFrame baseFrame;
 	
+	
 	public PokemonController()
 	{
 		pokedex = new ArrayList<Pokemon>();
@@ -28,7 +29,7 @@ public class PokemonController
 	{
 		pokedex.add(new Magicarp("OP"));
 		pokedex.add(new Rhyhorn("Master"));
-		pokedex.add(new Bulbasuar("Whip"));
+		pokedex.add(new Bulbasaur("Whip"));
 		pokedex.add(new Charizard("Blaze"));
 		
 	}
@@ -43,5 +44,23 @@ public class PokemonController
 		
 		return pokemonNames;
 	}
+	
+	public ArrayList<Pokemon> getPokedex()
+	{
+		return pokedex;
+	}
+
+	public PokemonFrame getBaseFrame() 
+	{
+		return baseFrame;
+	}
+
+	public void setBaseFrame(PokemonFrame baseFrame) 
+	{
+		this.baseFrame = baseFrame;
+	}
+	
+	
+	
 	
 }

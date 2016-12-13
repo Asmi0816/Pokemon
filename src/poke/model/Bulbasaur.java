@@ -10,5 +10,20 @@ public class Bulbasaur extends Pokemon implements Grass
 	{
 		super(name, 01);
 	}
+	
+	public Bulbasaur(String name, int number)
+	{
+		super(name, number);
+	}
+	
+	public int vineWhip() 
+	{
+		return 2;
+	}
+	
+	public int leechSeed()
+	{
+		return this.getAttackPoints() * 2;
+	}
 }
 

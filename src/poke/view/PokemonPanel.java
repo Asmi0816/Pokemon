@@ -4,8 +4,7 @@ import java.awt.Color;
 import javax.swing.*;
 import poke.controller.PokemonController;
 import java.awt.Dimension;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 
 public class PokemonPanel extends JPanel
 {
@@ -105,12 +104,71 @@ public class PokemonPanel extends JPanel
 				speedField.setText(baseController.getPokedex().get(selected).getSpeed() + "");
 				healthField.setText(baseController.getPokedex().get(selected).getHealthPoints() + "");
 				advancedArea.setText(baseController.getPokedex().get(selected).getPokemonInformation()
-						+ "\n\n" + baseController.getPokedex.get(selected).getClass().getSimpleName());
+						+ "\n\n" + baseController.getPokedex().get(selected).getClass().getSimpleName());
 				changeColorBasedOnData(baseController.getPokedex().get(selected).getClass().getSimpleName());
 				changeImageDisplay(baseController.getPokedex().get(selected).getClass().getSimpleName());
 			}
 		});
+		
+		this.addMouseListener(new MouseListener()
+				{
+					public void mouseEntered(MouseEvent entered)
+					{
+						JOptionPane.showMessageDialog(baseController.getBaseFrame(), "the mouse entered something");
+					}
+					
+					public void mouseReleased(MouseEvent released)
+					{
+						System.out.println("released");
+					}
+					
+					public void mouseExited(MouseEvent exited)
+					{
+						JOptionPane.showMessageDialog(baseController.getBaseFrame(), "the mouse entered something");
+					}
+					
+					public void mouseClicked(MouseEvent clicked)
+					{
+						System.out.println("clicked");
+					}
+					
+					public void mousePressed(MouseEvent pressed)
+					{
+						System.out.println("pressed");
+					}
+				}
+				);
+		
+		
+		this.addMouseMotionListener(new MouseMotionListener()
+		{
+					
+					public void mouseDragged(MouseEvent dragged)
+					{
+						JOptionPane.showMessageDialog(baseController.getBaseFrame(), "the mouse was at X:" + moved.getX() + ",Y:" + moved.getY());
+					}
+					public void mouseMoved(MouseEvent moved)
+					{
+						if ((Math.abs(moved.getX() - updateButton.getX()) < 5 || (Math.abs(moved.getY() - updateButton.getY()) < 5)))
+						{
+							updateButton.setLocation(moved.getX() + 10, moved.getY() - 10);
+						}
+					}
+		});
 	}
+	
+	
+	public void setRandomColor()
+	{
+		int red = (int) (Math.random() * 256);
+		int green = (int) (Math.random() * 256);
+		int blue = (int) (Math.random() * 256);
+		
+		this.setBackground(new Color(red, green,blue));
+	}
+	
+	
+	
 	
 	private void changeColorBasedOnData(String data)
 	{
@@ -140,4 +198,22 @@ public class PokemonPanel extends JPanel
 		}
 		repaint();
 	}
+	
+	private void changeImageDisplay(String name)
+	{
+		String path = "/poke/view/images/";
+		String defaultName = "ultraball";
+		String extension = ".png";
+		try
+		{
+			pokemonIcon = new ImageIcon(getClass().getResource(path+ name+ extension));
+		}
+		catch (NullPointerException missingFile)
+		{
+			pokemonIcon = new ImageIcon(getClass().getResource(path+ defaultName+ extension));
+		}
+		pokemonLabel.setIcon(pokemonIcon);
+		repaint();
+	}
+
 }

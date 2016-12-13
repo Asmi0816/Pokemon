@@ -30,12 +30,62 @@ public abstract class Pokemon
 	
 	public String toString()
 	{
-		
+		return "This pokemons health is " + this.healthPoints + " It has a attack stat of " + this.attackPoints + " I know this pokemon has a speed of " +
+	 this.speed + " And has and epic and lucky number of " + this.number + " And its name is " + this.name;
 	}
 	
 	public String getPokemonInformation()
 	{
 		String pokemonInfo = "this pokemon is of type: " + this.getClass().getSimpleName();
 		return pokemonInfo;
+	}
+	
+	public int getHealthPoints()
+	{
+		return healthPoints;
+	}
+	
+	public int getAttackPoints()
+	{
+		return attackPoints;
+	}
+	
+	public double getSpeed()
+	{
+		return speed;
+	}
+	
+	public int getNumber()
+	{
+		return number;
+	}
+	
+	public String getName()
+	{
+		return name;
+	}
+	
+	public void setHealthPoints(int healthPoints)
+	{
+		this.healthPoints = healthPoints;
+	}
+	
+	public void setAttackPoints(int attackPoints)
+	{
+		this.attackPoints = attackPoints;
+	}
+	
+	public void setSpeed(double speed)
+	{
+		this.speed = speed;
+	}
+	
+	public void setNumber(int number)
+	{
+		this.number = number;
+	}
+	public void setName(String name)
+	{
+		this.name = name;
 	}
 }
