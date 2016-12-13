@@ -31,6 +31,7 @@ public class PokemonController
 		pokedex.add(new Rhyhorn("Master"));
 		pokedex.add(new Bulbasaur("Whip"));
 		pokedex.add(new Charizard("Blaze"));
+		pokedex.add(new Magicarp("5 OH'"));
 		
 	}
 	
