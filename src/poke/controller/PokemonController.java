@@ -32,6 +32,8 @@ public class PokemonController
 		pokedex.add(new Bulbasaur("Whip"));
 		pokedex.add(new Charizard("Blaze"));
 		pokedex.add(new Magicarp("5 OH'"));
+		pokedex.add(new Charizard("Rizen"));
+		pokedex.add(new Gyarados("MASTER"));
 		
 	}
 	

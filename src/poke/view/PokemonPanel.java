@@ -110,6 +110,8 @@ public class PokemonPanel extends JPanel
 			}
 		});
 		
+		updateButton.addActionListener(new ActionListener());
+		
 		this.addMouseListener(new MouseListener()
 				{
 					public void mouseEntered(MouseEvent entered)

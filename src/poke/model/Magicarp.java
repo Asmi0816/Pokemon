@@ -4,11 +4,11 @@ public class Magicarp extends Pokemon implements Water
 {
 	public Magicarp()
 	{
-		super("Magicarp", 01);
+		super("Magicarp", 129);
 	}
 	public Magicarp(String name)
 	{
-		super(name, 01);
+		super(name, 129);
 	}
 	
 	public Magicarp(String name, int number)

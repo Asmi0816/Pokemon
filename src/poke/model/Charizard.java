@@ -4,11 +4,11 @@ public class Charizard extends Pokemon implements Fire
 {
 	public Charizard()
 	{
-		super("Charizard", 01);
+		super("Charizard", 005);
 	}
 	public Charizard(String name)
 	{
-		super(name, 01);
+		super(name, 005);
 	}
 	
 	public Charizard(String name, int number)
