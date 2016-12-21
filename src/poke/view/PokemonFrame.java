@@ -24,7 +24,7 @@ public class PokemonFrame extends JFrame
 			{
 				this.setContentPane(basePanel);
 				this.setTitle("You got served sucker");
-				this.setSize(new Dimension(600, 400));
+				this.setSize(new Dimension(1080, 800));
 				this.setResizable(false);
 				this.setVisible(true);
 			}
