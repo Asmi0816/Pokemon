@@ -110,7 +110,20 @@ public class PokemonPanel extends JPanel
 			}
 		});
 		
-		updateButton.addActionListener(new ActionListener());
+		updateButton.addActionListener(new ActionListener()
+				{
+				public void actionPerformed(ActionEvent selection)
+				{
+					if(isValidName(nameField.getText()) && isValidInteger(combatField.getText())
+							&& isValidInteger(healthField.getText()) && isValidDouble(speedField.getText()))
+					{
+						int selected = pokedexSelector.getSelectedIndex();
+						
+						baseController.updateSelected(selected, nameField.getText(), Integer.parseInt(combatField.getText()), 
+														Integer.parseInt(healthField.getText()) , Integer.parseInt(speedField.getText()));
+					}
+				}
+				});
 		
 		this.addMouseListener(new MouseListener()
 				{
@@ -217,5 +230,48 @@ public class PokemonPanel extends JPanel
 		pokemonLabel.setIcon(pokemonIcon);
 		repaint();
 	}
-
+	
+	private boolean isValidInteger(String input)
+	{
+		boolean valid = false;
+		try
+		{
+			Integer.parseInt(input);
+			valid = true;
+		}
+		catch (NumberFormatException e)
+		{
+			valid = false;
+		}
+		
+		return valid;
+	}
+	
+	private boolean isValidDouble(String input)
+	{
+		boolean valid = false;
+		try
+		{
+			Double.parseDouble(input);
+			valid = true;
+		}
+		catch (NumberFormatException e)
+		{
+			valid = false;
+		}
+		
+		return valid;
+	}
+	
+	private boolean isValidName(String input)
+	{
+		boolean name = false;
+		
+		if (input.length() >= 2)
+		{
+			name = true;
+		}
+		
+		return name;
+	}
 }
